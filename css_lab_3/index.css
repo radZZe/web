@@ -1,0 +1,22 @@
+.main{
+    width: 50%;
+    height: 20%;
+    background-color: green;
+    padding: 4px;
+    margin: 0 auto;
+}
+.item{
+    display: inline-block;
+    height: 100%;
+    background-color: #fff;
+    width: 32.7%;
+    white-space: wrap;
+    
+}
+.container{
+    display: block;
+    white-space: nowrap;
+    padding: 5px;
+    min-width: 100%;
+    max-height: 5%;
+}
