@@ -10,138 +10,205 @@ body{
     height: 100%;
 }
 .header{
-    padding-top: 20px;
-    width:100%;
-    height: 20vh;
-    background-image: url("https://i.pinimg.com/originals/24/69/21/24692167b3233d799d407c17bc2f226e.jpg");
+    margin: 0;
+    padding:0;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    "header_title . . ."
+    "header_title menu menu menu";
 }
-.header h3{
+.header_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    display: block; 
+    margin: 0;
+    background-color: gray;
+    grid-area: header_title;
+    font-size: 20px;
 }
 .menu{
-    margin-top:4.5%;
-    margin-left: 50%;
-    width: 50%;
-    display: block;
-    white-space: nowrap;
+    background-color: gray;
+    grid-area: menu;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
 .menu a{
     text-align: center;
-    display: inline-block;
-    width: 32.7%;
     text-decoration: none;
     color:black;
-    font-size: 1.5em;
+    font-size: 20px;
 }
 .menu a:hover{
     color:red
 }
-.side-content{
-    float: left;
-    width: 50%;
-    height: 100%;
-    white-space: nowrap;
-    padding: 0;
-}
-.side-content .img{
-    display: inline-block;
-    width: 50%;
-    background-size: cover;
-    min-height: 100%;
-    white-space: wrap;
+.main_img{
+    margin-top: 2px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sylvilagus_audubonii.jpg/398px-Sylvilagus_audubonii.jpg");
-}
-.side-content p{
-    display: inline-block;
-    width: 49%;
-    white-space: wrap;
-
-}
-.container{
-    display: block;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: 35%;
+    background-size: cover;
 }
-.container-main{
-    width: 49%;
-    height: 100%;
-    float: right;
+.sub_img{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-
-.left {
-    float: left;
-    width: 30%;
-  }
-.right {
-    float: right;
+.sub_img img{
+    min-width:100px ;
+    flex-grow:1;
 }
-.main-conten-item{
-    height: 30%;
+.logo_block{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
 }
-.main-conten-item img{
-    vertical-align: middle;
-    height: 60%;
+.logo_item{
+    text-align: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo_item img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.main_text_block{
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.main_text_block_title{
+    font-weight: 700;
+    font-size: 25px;
+}
+.final_block{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "final_img final_text";
+}
+.final_block_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.final_block_content_title{
+    font-weight: 700;
+    font-size: 25px;
 }
 .footer{
-    padding-top:10px ;
-    padding-bottom: 10px;
+    margin-top: 12px;
+    height: 3%;
+    background-color: grey;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
 }
-.tiger{
-    width: 100%;
-    height: 50%;
-}
-.crocodile{
-    width: 100%;
-    height: 50%;
-}
-.leo{
-    width: 100%;
-    height: 50%;
-}
-.leo div{
-    float: right;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-    line-height: 3.8em;
-}
-.tiger div{
-    float: right;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-    line-height: 3.8em;
-}
-.crocodile div{
-    float: right;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-    line-height: 3.8em;
-}
-.tiger .img{
-    float: left;
-    width: 50%;
-    height: 100%;
-    background-size: cover;
-    white-space: wrap;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Panthera_tigris_tigris.jpg/398px-Panthera_tigris_tigris.jpg");
-}
-.crocodile .img{
-    float: left;
-    width: 50%;
-    height: 100%;
-    background-size: cover;
-    white-space: wrap;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Alligator_mississippiensis.jpg/413px-Alligator_mississippiensis.jpg");
-}
-.leo .img{
-    float: left;
-    width: 50%;
-    height: 100%;
-    background-size: cover;
-    white-space: wrap;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Amur_Leopard_%28P.p._amurensis%29.jpg/413px-Amur_Leopard_%28P.p._amurensis%29.jpg");
+@media (max-width:1024px){
+    .header_title{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    .header{
+        margin: 0;
+        padding:0;
+        height: 20%;
+        display: block;
+    }
+    .menu{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        background-color: gray;
+    }
+    .sub_img{
+        width: 100%;
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    .sub_img img{
+        display: block;
+        min-width:100px;
+        max-width: 50%;
+        flex-grow:1;
+    }
+    .logo_block{
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo_item{
+        text-align: center;
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo_item img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    .final_block{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .final_block_content{
+        order: -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .final_block_content_title{
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .footer{
+        height: 5%;
+    }
 }
