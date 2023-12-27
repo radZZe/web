@@ -1,0 +1,19 @@
+-
+    var dictMenu = {
+        'Главная':'index.html',
+        'Дальневосточный леопард':'#',
+        'Статистика':'#'
+    }
+    var titleText = 'Самые высокие здания и сооружения'
+mixin createMenu(menu, active)
+    each value, key in dictMenu
+        if active == key
+           a.active(href= value)= key 
+        else
+            a(href= value)= key
+block header
+.header
+  .header_title
+    h3= titleText
+  .menu
+    +createMenu(dictMenu,'Главная')

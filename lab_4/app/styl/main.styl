@@ -1,0 +1,190 @@
+size(width,height)
+  width width
+  height height
+
+color-gray = gray 
+.flex-center
+  flex-direction column
+  justify-content center
+  align-items center
+
+html
+  height 100%
+  width 100%
+
+body
+  size(100%,100%)
+  margin 0
+  padding 0
+
+.main
+  size(100%,100%)
+
+.header
+  margin 0;
+  padding 0;
+  height 20%;
+  display grid;
+  grid-template-columns 2fr 1fr 1fr 1fr;
+  grid-template-rows repeat(2,1fr);
+  grid-template-areas "header_title . . .""header_title menu menu menu"
+
+.header_title
+  display flex
+  @extend .flex-center
+  margin 0
+  background-color color-gray
+  grid-area header_title
+  font-size 20px
+
+.menu
+  background-color color-gray
+  grid-area menu
+  display flex
+  align-items center
+  flex-direction row
+  justify-content space-around
+  a
+    text-align center
+    text-decoration none
+    color black
+    font-size 20px
+    &:hover
+      color red
+a.active
+  color red
+
+.main_img
+  margin-top 2px
+  background-image url("../img/bunny.jpg")
+  size(100%,35%)
+  background-size cover
+
+.sub_img
+  margin-top 2px
+  display flex
+  flex-direction row
+  justify-content space-between
+  img
+    min-width 100px
+    flex-grow 1
+
+.logo_block
+  margin-top 40px
+  display flex
+  flex-direction row
+  width 100%
+  justify-content center
+  &_item
+    text-align center
+    padding-left 1%
+    padding-right 1%
+    width 15%
+    display flex
+    flex-direction column
+    align-items center
+  img
+    size(50px,50px)
+    border-radius 50%
+
+.main_text_block
+  margin 0 auto
+  margin-top 2%
+  width 95%
+  display flex
+  @extends .flex-center
+  text-align center
+  &_title
+    font-weight 700
+    font-size 25px
+
+.final_block
+  width 95%
+  margin 0 auto
+  display grid
+  grid-template-columns 1fr auto
+  grid-template-rows 1fr
+  grid-template-areas "final_img final_text"
+  &_content
+    display flex
+    @extends .flex-center
+    text-align center
+    &_title
+        font-weight 700
+        font-size 25px
+
+.footer
+  margin-top 12px
+  height 3%
+  background-color grey
+  padding-left 10px
+  padding-right 10px
+  display flex
+  flex-direction row
+  justify-content space-between
+  align-content center
+
+@media (max-width:1024px)
+  .header_title
+    display none
+    size(0,0)
+  .header
+    margin 0
+    padding 0
+    height 20%
+    display block
+  .menu
+    height 100%
+    display grid
+    grid-template-columns repeat(2,1fr)
+    grid-template-rows auto
+    background-color color-gray
+  .sub_img
+    width 100%
+    margin-top 2px
+    display flex
+    @extends .flex-center
+    align-content center
+    img
+      display block
+      min-width 100px
+      max-width 50%
+      flex-grow 1
+  .logo_block
+    margin-top 2px
+    display flex
+    flex-direction column
+    width 100%
+    justify-content center
+    align-items center
+  .logo_item
+    text-align center
+    padding-left 1%
+    padding-right 1%
+    width 50%
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    img
+      size(150px,150px)
+      border-radius 50%
+  .final_block
+    width 95%
+    margin 0 auto
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+  .final_block_content
+    order -1
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    text-align center
+  .final_block_content_title
+    font-weight 700
+    font-size 25px
+  .footer
+    height 5%
