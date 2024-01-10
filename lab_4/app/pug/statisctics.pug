@@ -1,0 +1,558 @@
+extends template
+block variables 
+    -
+        var active_menu = 'Статистика'
+        var jopa = 5
+        var animals = [
+            {
+                name: 'Лев',
+                type: 'Млекопитающее',
+                weight: 20000,
+                lifespan: 14,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Белый медведь',
+                type: 'Млекопитающее',
+                weight: 26000,
+                lifespan: 30,
+                habitat: 'Потеря среды',
+                location: 'Арктика',
+                endangered: 'Да'
+            },
+            {
+                name: 'Тигр',
+                type: 'Млекопитающее',
+                weight: 3900,
+                lifespan: 15,
+                habitat: 'Охота',
+                location: 'Азия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Гепард',
+                type: 'Млекопитающее',
+                weight: 7000,
+                lifespan: 12,
+                habitat: 'Потеря среды',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Панда',
+                type: 'Млекопитающее',
+                weight: 1800,
+                lifespan: 30,
+                habitat: 'Потеря среды',
+                location: 'Китай',
+                endangered: 'Да'
+            },
+            {
+                name: 'Горилла',
+                type: 'Млекопитающее',
+                weight: 1000,
+                lifespan: 45,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Жираф',
+                type: 'Млекопитающее',
+                weight: 68000,
+                lifespan: 30,
+                habitat: 'Потеря среды',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Слон',
+                type: 'Млекопитающее',
+                weight: 415000,
+                lifespan: 70,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Орангутан',
+                type: 'Млекопитающее',
+                weight: 104700,
+                lifespan: 40,
+                habitat: 'Охота',
+                location: 'Азия',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Зебра',
+                type: 'Млекопитающее',
+                weight: 500000,
+                lifespan: 25,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Коала',
+                type: 'Млекопитающее',
+                weight: 43000,
+                lifespan: 18,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Пингвин',
+                type: 'Птица',
+                weight: 18000000,
+                lifespan: 20,
+                habitat: 'Потеря среды',
+                location: 'Антарктида',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Орел',
+                type: 'Птица',
+                weight: 30000,
+                lifespan: 30,
+                habitat: 'Охота',
+                location: 'Евразия',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Фламинго',
+                type: 'Птица',
+                weight: 4000000,
+                lifespan: 30,
+                habitat: 'Потеря среды',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Крокодил',
+                type: 'Рептилия',
+                weight: 2000000,
+                lifespan: 60,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Красная пантера',
+                type: 'Рептилия',
+                weight: 2000,
+                lifespan: 20,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Полевая мышь',
+                type: 'Млекопитающее',
+                weight: 35000000,
+                lifespan: 2,
+                habitat: 'Потеря среды',
+                location: 'Весь мир',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Бобер',
+                type: 'Млекопитающее',
+                weight: 100000,
+                lifespan: 13,
+                habitat: 'Потеря среды',
+                location: 'Евразия',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Волк',
+                type: 'Млекопитающее',
+                weight: 60000,
+                lifespan: 15,
+                habitat: 'Охота',
+                location: 'Азия,Северная Америка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Куница',
+                type: 'Млекопитающее',
+                weight: 30000,
+                lifespan: 15,
+                habitat: 'Охота',
+                location: 'Азия,Европа',
+                endangered: 'Да'
+            },
+            {
+                name: 'Косуля',
+                type: 'Млекопитающее',
+                weight: 52000,
+                lifespan: 12,
+                habitat: 'Охота',
+                location: 'Евразия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Утка-мандаринка',
+                type: 'Птица',
+                weight: 50000,
+                lifespan: 15,
+                habitat: 'Охота',
+                location: 'Дальний восток',
+                endangered: 'Да'
+            },
+            {
+                name: 'Лось',
+                type: 'Млекопитающее',
+                weight: 1200000,
+                lifespan: 20,
+                habitat: 'Потеря среды',
+                location: 'Европа.Тайга',
+                endangered: 'Да'
+            },
+            {
+                name: 'Ёж обыкновенный',
+                type: 'Млекопитающее',
+                weight: 25000000,
+                lifespan: 4,
+                habitat: 'Потеря среды',
+                location: 'Весь мир',
+                endangered: 'Да'
+            },
+            {
+                name: 'Кит',
+                type: 'Млекопитающее',
+                weight: 10000,
+                lifespan: 80,
+                habitat: 'Истребление',
+                location: 'Все океаны',
+                endangered: 'Да'
+            },
+            {
+                name: 'Ехидна',
+                type: 'Яйцекладущее',
+                weight: 200000,
+                lifespan: 50,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Эму',
+                type: 'Птица',
+                weight: 1100000,
+                lifespan: 20,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Динго',
+                type: 'Млекопитающее',
+                weight: 8000,
+                lifespan: 10,
+                habitat: 'Охота',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Валлаби',
+                type: 'Млекопитающее',
+                weight: 40000,
+                lifespan: 12,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Киви',
+                type: 'Птица',
+                weight: 24000,
+                lifespan: 40,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Утконос',
+                type: 'Млекопитающее',
+                weight: 5000,
+                lifespan: 30,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Дикий дог',
+                type: 'Млекопитающее',
+                weight: 2500,
+                lifespan: 11,
+                habitat: 'Охота',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Тасманский дьявол',
+                type: 'Млекопитающее',
+                weight: 10000,
+                lifespan: 7,
+                habitat: 'Заболевания',
+                location: 'Австралия',
+                endangered: 'Да'
+            },
+            {
+                name: 'Вомбат',
+                type: 'Млекопитающее',
+                weight: 600000,
+                lifespan: 16,
+                habitat: 'Потеря среды',
+                location: 'Австралия',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Черный лебедь',
+                type: 'Птица',
+                weight: 50000,
+                lifespan: 22,
+                habitat: 'Охота',
+                location: 'Австралия',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Ягуар',
+                type: 'Млекопитающее',
+                weight: 15000,
+                lifespan: 13,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Альпака',
+                type: 'Млекопитающее',
+                weight: 3000000,
+                lifespan: 16,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Гарпия',
+                type: 'Птица',
+                weight: 10000,
+                lifespan: 30,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Капибара',
+                type: 'Млекопитающее',
+                weight: 10000000,
+                lifespan: 9,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Кондор',
+                type: 'Птица',
+                weight: 3000,
+                lifespan: 60,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Кайман',
+                type: 'Рептилия',
+                weight: 1000000,
+                lifespan: 40,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Козодой',
+                type: 'Млекопитающее',
+                weight: 50000,
+                lifespan: 23,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Желтая попугайница',
+                type: 'Птица',
+                weight: 100000,
+                lifespan: 17,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Пампасный олень',
+                type: 'Млекопитающее',
+                weight: 500000,
+                lifespan: 18,
+                habitat: 'Охота',
+                location: 'Южная Америка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Король пингвинов',
+                type: 'Птица',
+                weight: 2000000,
+                lifespan: 18,
+                habitat: 'Потеря среды',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Нильский крокодил',
+                type: 'Рептилия',
+                weight: 250000,
+                lifespan: 80,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Да'
+            },
+            {
+                name: 'Черная мамба',
+                type: 'Рептилия',
+                weight: 10000,
+                lifespan: 12,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Антилопа гну',
+                type: 'Млекопитающее',
+                weight: 1500000,
+                lifespan: 22,
+                habitat: 'Потеря среды',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Капская горная коза',
+                type: 'Млекопитающее',
+                weight: 5000,
+                lifespan: 12,
+                habitat: 'Охота',
+                location: 'Африка',
+                endangered: 'Нет'
+            },
+            {
+                name: 'Японский сурок',
+                type: 'Млекопитающее',
+                weight: 10000,
+                lifespan: 6,
+                habitat: 'Охота',
+                location: 'Япония',
+                endangered: 'Нет'
+            }
+        ]
+        var headersTable = ['Наименование','Вид животного','Численность','Продолжительность жизни (лет)','Угрозы жизни','Ареал обитания','Под охраной?',]
+        var graphCheck = { 
+        'максимальная численность':'max_amount',
+        'максимальная продолжительность жизни':'max_amount_live',
+        'минимальная численность':'min_amount',
+        'минимальная продолжительность жизни':'min_amount_live',}
+        var sortCheck = [
+            {
+                level:'Первый уровень',
+                option1:'Нет',
+                option2:'Да',
+                content:'по убыванию?'
+            },
+            {
+                level:'Второй уровень',
+                option1:'Нет',
+                option2:'Да',
+                content:'по убыванию?'
+            },
+            {
+                level:'Третий уровень',
+                option1:'Нет',
+                option2:'Да',
+                content:'по убыванию?'
+            },
+        ]
+block content
+    details
+        summary График
+        table(cellspacing=15)
+            th
+            b Значение по оси ОХ
+            th
+            b Результат
+            tr
+            td
+                form
+                    p
+                        input(name="radio", type="radio", value="amount")
+                        | Вид животного
+                    p
+                        input(name="radio", type="radio", value="amount_live")
+                        | Ареал обитания
+            td
+                form
+                    each string,key in graphCheck 
+                        p
+                            input(name="checkbox", type="checkbox", value=string)
+                            =key
+        p Здесь будет график
+
+    details
+        summary Фильтр
+        p
+            | Название:
+            input(type="text")
+        p
+            | Вид:
+            input(type="text")
+        p
+            | Ареал:
+            input(type="text")
+        p
+            | Численность: от
+            input(type="text")
+            |  до
+            input(type="text")
+        p
+            | Продолжительность жизни: от
+            input(type="text")
+            |  до
+            input(type="text")
+        p
+            | Охраняется?
+            select
+            option Нет
+            option Да
+
+    details
+        summary Сортировка
+        each value in sortCheck
+            p=value.level
+                select
+                    option=value.option1
+                    option=value.option2
+                p 
+                    span=value.content 
+                    input(type="checkbox", name="check_redu")
+    .data-table 
+        table(align=center)
+            each value in headersTable
+                th=value 
+            each value in animals 
+                tr
+                    td=value.name 
+                    td=value.type 
+                    td=value.weight 
+                    td=value.lifespan  
+                    td=value.habitat  
+                    td=value.location 
+                    td=value.endangered 

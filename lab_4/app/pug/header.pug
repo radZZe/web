@@ -1,8 +1,8 @@
 -
     var dictMenu = {
         'Главная':'index.html',
-        'Дальневосточный леопард':'#',
-        'Статистика':'#'
+        'Дальневосточный леопард':'leopard.html',
+        'Статистика':'statisctics.html'
     }
     var titleText = 'Самые высокие здания и сооружения'
 mixin createMenu(menu, active)
@@ -16,4 +16,4 @@ block header
   .header_title
     h3= titleText
   .menu
-    +createMenu(dictMenu,'Главная')
+    +createMenu(dictMenu,active_menu)

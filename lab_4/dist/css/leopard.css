@@ -1,0 +1,18 @@
+.flex-leo,
+.leo_block {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.leo_title {
+  width: 100%;
+  text-align: center;
+}
+.leo_block {
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+}
+.leo_block p {
+  width: 40%;
+}

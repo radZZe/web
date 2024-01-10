@@ -134,24 +134,6 @@ a.active {
   align-content: center;
 }
 @media (max-width: 1024px) {
-  .header_title {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-  .header {
-    margin: 0;
-    padding: 0;
-    height: 20%;
-    display: block;
-  }
-  .menu {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    background-color: #808080;
-  }
   .sub_img {
     width: 100%;
     margin-top: 2px;
@@ -171,6 +153,14 @@ a.active {
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+  .logo_block_item {
+    width: 80%;
+  }
+  .logo_block_item img {
+    width: 40%;
+    height: 40%;
+    border-radius: 0%;
   }
   .logo_item {
     text-align: center;
